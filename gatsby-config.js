@@ -4,7 +4,7 @@ module.exports = {
     description: "Just trying out WebGL.",
     author: "@maxbause",
   },
-  pathPrefix: "/maxbause/webgl-fun",
+  pathPrefix: "/webgl-fun",
   plugins: [
     "gatsby-plugin-react-helmet",
     {

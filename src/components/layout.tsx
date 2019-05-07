@@ -10,8 +10,9 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "../../public/uikit/css/uikit.min.css"
 import TOC from "./toc";
+
+import "./layout.css";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -37,8 +38,6 @@ const Layout = ({ children }) => (
         >
           <main>{children}</main>
           <TOC />
-          <script src="/uikit/js/uikit-icons.min.js"></script>
-          <script src="/uikit/js/uikit.min.js"></script>
           <footer>
             © {new Date().getFullYear()} <a href="https://github.com/maxbause">Max Bause</a>, Built with
             {" "}

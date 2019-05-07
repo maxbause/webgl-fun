@@ -10,7 +10,8 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
+import "../../public/uikit/css/uikit.min.css"
+import TOC from "./toc";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -28,16 +29,19 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
-            margin: `0 auto`,
+            margin: "0 auto",
             maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
+            padding: "0px 1.0875rem 1.45rem",
             paddingTop: 0,
           }}
         >
           <main>{children}</main>
+          <TOC />
+          <script src="/uikit/js/uikit-icons.min.js"></script>
+          <script src="/uikit/js/uikit.min.js"></script>
           <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
+            © {new Date().getFullYear()} <a href="https://github.com/maxbause">Max Bause</a>, Built with
+            {" "}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
         </div>

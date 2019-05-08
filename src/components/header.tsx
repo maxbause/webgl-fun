@@ -32,7 +32,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
       <div style={{ width: "32px" }}>
-        <a href="https://github.com/maxbause" target="_blank">
+        <a href="https://github.com/maxbause/webgl-fun" target="_blank">
           <Image />
         </a>
       </div>

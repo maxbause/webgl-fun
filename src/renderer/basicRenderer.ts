@@ -13,7 +13,7 @@ export default class BasicRenderer {
 
   constructor(private gl: WebGLRenderingContext) { }
 
-  public createShader(gl: WebGLRenderingContext, type: number, source: string) {
+  public static createShader(gl: WebGLRenderingContext, type: number, source: string) {
     let shader = gl.createShader(type);
     gl.shaderSource(shader, source);
     gl.compileShader(shader);
@@ -27,7 +27,7 @@ export default class BasicRenderer {
     gl.deleteShader(shader);
   }
 
-  public createProgram(gl: WebGLRenderingContext, vertexShader: WebGLShader, fragmentShader: WebGLShader) {
+  public static createProgram(gl: WebGLRenderingContext, vertexShader: WebGLShader, fragmentShader: WebGLShader) {
     let program = gl.createProgram();
     gl.attachShader(program, vertexShader);
     gl.attachShader(program, fragmentShader);
@@ -43,9 +43,9 @@ export default class BasicRenderer {
   }
 
   public run() {
-    let vertexShader = this.createShader(this.gl, this.gl.VERTEX_SHADER, VertexShader);
-    let fragmentShader = this.createShader(this.gl, this.gl.FRAGMENT_SHADER, FragmentShader);
-    this.program = this.createProgram(this.gl, vertexShader, fragmentShader);
+    let vertexShader = BasicRenderer.createShader(this.gl, this.gl.VERTEX_SHADER, VertexShader);
+    let fragmentShader = BasicRenderer.createShader(this.gl, this.gl.FRAGMENT_SHADER, FragmentShader);
+    this.program = BasicRenderer.createProgram(this.gl, vertexShader, fragmentShader);
 
     this.positionAttributeLocation = this.gl.getAttribLocation(this.program, "a_position");
     this.positionBuffer = this.gl.createBuffer();

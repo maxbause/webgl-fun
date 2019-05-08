@@ -2,13 +2,13 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import BasicRenderer from "../renderer/basicRenderer";
+import ImageProcessingRenderer from "../renderer/imageProcessing";
 
 interface IState {
   webGLWarning: string;
 }
 
-export default class BasicRendererPage extends React.Component<{}, IState> {
+export default class ImageProcessingPage extends React.Component<{}, IState> {
   private ref: React.RefObject<HTMLCanvasElement>;
 
   constructor(props) {
@@ -26,8 +26,8 @@ export default class BasicRendererPage extends React.Component<{}, IState> {
         webGLWarning: "Sorry, but your browser does not suppport webgl."
       })
     } else {
-      const basicRenderer = new BasicRenderer(gl);
-      basicRenderer.run();
+      const imageProcessingRenderer = new ImageProcessingRenderer(gl);
+      imageProcessingRenderer.run();
     }
   }
 
@@ -35,7 +35,7 @@ export default class BasicRendererPage extends React.Component<{}, IState> {
     return (
       <Layout>
         <SEO title="Home" keywords={["gatsby", "application", "react", "webgl", "programming", "basic", "renderer"]} />
-        <h1>Basic renderer</h1>
+        <h1>Image processing</h1>
         {this.state.webGLWarning ?
           <p><i>{this.state.webGLWarning} ️️️😖</i></p>
           :

@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ImageProcessingRenderer from "../renderer/imageProcessing";
+import ImageProcessingRenderer from "../renderer/imageProcessingRenderer";
 
 interface IState {
   webGLWarning: string;

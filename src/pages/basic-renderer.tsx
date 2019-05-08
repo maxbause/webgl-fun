@@ -2,6 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import BasicRenderer from "../renderer/basicRenderer";
 
 interface IState {
   webGLWarning: string;
@@ -24,6 +25,9 @@ export default class BasicRendererPage extends React.Component<{}, IState> {
       this.setState({
         webGLWarning: "Sorry, but your browser does not suppport webgl."
       })
+    } else {
+      const basicRenderer = new BasicRenderer(gl);
+      basicRenderer.run();
     }
   }
 
